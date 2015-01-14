@@ -18,33 +18,6 @@
  * https://dozmia.com
  */
 (function($) {
-
-	$.tools = $.tools || {version: '@VERSION'};
-
-	var tool;
-
-	tool = $.tools.rangeinput = {
-
-		conf: {
-			min: 0,
-			max: 100,		// as defined in the standard
-			steps: 0,
-			value: 0,
-			keyboard: true,
-			progress: false,
-			speed: 100,
-
-			// set to null if not needed
-			css: {
-				input    : 'range',
-				slider   : 'slider',
-				progress : 'progress',
-				handle   : 'handle'
-			}
-
-		}
-	};
-
 	var doc, draggable;
 
 	$.fn.drag = function(conf) {
