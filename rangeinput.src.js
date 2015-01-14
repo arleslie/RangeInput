@@ -20,6 +20,25 @@
 (function($) {
 	var doc, draggable;
 
+	var defaultConf = {
+		min: 0,
+		max: 100, // as defined in the standard
+		steps: 0,
+		value: 0,
+		keyboard: true,
+		progress: false,
+		speed: 100,
+
+		// set to null if not needed
+		css: {
+			input    : 'range',
+			slider   : 'slider',
+			progress : 'progress',
+			handle   : 'handle'
+		}
+
+	};
+
 	$.fn.drag = function(conf) {
 
 		// disable IE specialities
@@ -130,7 +149,7 @@
 
 
 		/**
-		 	The flesh and bone of this tool. All sliding is routed trough this.
+			The flesh and bone of this tool. All sliding is routed trough this.
 
 			@param evt types include: click, keydown, blur and api (setValue call)
 			@param isSetValue when called trough setValue() call (keydown, blur, api)
@@ -374,7 +393,7 @@
 		if (this.data("rangeinput")) { return this; }
 
 		// extend configuration with globals
-		conf = $.extend(true, {}, tool.conf, conf);
+		conf = $.extend(true, {}, defaultConf, conf);
 
 		var els;
 
